@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Felicita Menu</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body, html {
+      height: 100%;
+      font-family: Arial, sans-serif;
+      color: #000;
+      overflow-x: hidden;
+    }
+
+    .back-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.4);
+      min-height: 100vh;
+    }
+
+    .logo {
+      width: 400px;
+      margin: -150px auto -130px;
+      display: block;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin: 0.5em 0;
+      color: #b30000;
+    }
+
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+      justify-items: center;
+    }
+
+    .category {
+      background: rgba(241, 7, 7, 0.9);
+      border-radius: 20px;
+      padding: 20px;
+      color: white;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      width: 220px;
+      height: 280px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .category:hover {
+      transform: scale(1.05);
+    }
+
+    .category img {
+      width: 200px;
+      height: 200px;
+      object-fit: contain;
+      margin-bottom: 20px;
+      border-radius: 20px;
+    }
+
+    .flavor-section {
+      display: none;
+      padding: 20px;
+      background: #fff3f3;
+      min-height: 100vh;
+    }
+
+    .flavor-section h2 {
+      color: #b30000;
+      margin-bottom: 10px;
+    }
+
+    .flavor-photo {
+      width: 80%;
+      max-width: 200px;
+      margin: 0 auto 20px;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      font-size: 18px;
+    }
+
+    li {
+      margin: 8px 0;
+    }
+
+    .back-button {
+      margin-top: 30px;
+      display: inline-block;
+      background-color: #b30000;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .back-button:hover {
+      background-color: #8e0000;
+    }
+  </style>
+  <script>
+    function showCategory(id) {
+      document.getElementById("main-menu").style.display = "none";
+      document.querySelectorAll(".flavor-section").forEach(section => section.style.display = "none");
+      document.getElementById(id).style.display = "block";
+    }
+
+    function goBack() {
+      document.querySelectorAll(".flavor-section").forEach(section => section.style.display = "none");
+      document.getElementById("main-menu").style.display = "block";
+    }
+  </script>
+</head>
+<body>
+
+  <video class="back-video" autoplay muted loop playsinline>
+    <source src="file:///C:/Users/ravin/OneDrive/Desktop/Felicita/background%20video.mp4" type="video/mp4">
+  </video>
+
+  <div class="content">
+    <div id="main-menu">
+      <img src="file:///C:/Users/ravin/OneDrive/Desktop/Felicita/felicita%20logo%201.png" alt="Felicita Logo" class="logo" />
+      <h1>Welcome to Felicita</h1>
+      <p>Enjoy the finest shisha experience</p>
+
+      <h1>Our Shisha</h1>
+      <div class="categories">
+        <!-- CATEGORIES -->
+        <div class="category" onclick="showCategory('traditional')">
+          <img src="file:///C:/Users/ravin/OneDrive/Desktop/Felicita/number%201.png" />
+          <div><b>Traditional – 159 AED</b></div>
+        </div>
+        <div class="category" onclick="showCategory('turkish')">
+          <img src="file:///C:/Users/ravin/OneDrive/Desktop/Felicita/number%202.jpeg" />
+          <div><b>Turkish Premium – 179 AED</b></div>
+        </div>
+        <div class="category" onclick="showCategory('brown')">
+          <img src="file:///C:/Users/ravin/OneDrive/Desktop/Felicita/number%203.jpeg" />
+          <div><b>Brown Leaf – 199 AED</b></div>
+        </div>
+        <div class="category" onclick="showCategory('dark')">
+          <img src="file:///C:/Users/ravin/OneDrive/Desktop/Felicita/number%204.jpeg" />
+          <div><b>Dark Leaf – 199 AED</b></div>
+        </div>
+        <div class="category" onclick="showCategory('signature')">
+          <img src="file:///C:/Users/ravin/OneDrive/Desktop/Felicita/number%208.jpeg" />
+          <div><b>SIGNATURE - 219 AED</b></div>
+        </div>
+        <div class="category" onclick="showCategory('whispers_wine')">
+          <img src="file:///C:/Users/ravin/OneDrive/Desktop/Felicita/WINE%20SHISHA.png" />
+          <div><b>Whispers & Wine - 249 AED</b></div>
+        </div>
+        <div class="category" onclick="showCategory('shisha_show')">
+          <img src="file:///C:/Users/ravin/OneDrive/Desktop/Felicita/WhatsApp%20Image%202025-04-21%20at%2001.36.23.jpeg" />
+          <div><b>SHISHA SHOW - 99 AED</b></div>
+        </div>
+        <div class="category" onclick="showCategory('whats_new')">
+          <img src="file:///C:/Users/ravin/OneDrive/Desktop/Felicita/11.webp" />
+          <div><b>WHATS NEW</b></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FLAVOR SECTIONS WITH PHOTOS -->
+    <div id="traditional" class="flavor-section">
+      <h2>Traditional – 159 AED</h2>
+      <img src="file:///C:/Users/ravin/OneDrive/Desktop/Felicita/ADALIYA.png" class="flavor-photo" />
+      <ul>
+        <li>Double Apple</li><li>Gum Mint</li><li>Gum</li><li>Mint</li><li>Lemon Mint</li><li>Orange</li>
+      </ul>
+      <a class="back-button" onclick="goBack()">← Back</a>
+    </div>
+
+    <div id="turkish" class="flavor-section">
+      <h2>Turkish Premium – 179 AED</h2>
+      <img src="file:///C:/Users/ravin/OneDrive/Desktop/Felicita/SERBATLI.png" class="flavor-photo" />
+      <ul>
+        <li>Love 66</li><li>Hawaii</li><li>Lady Killer</li><li>Gum Mint</li>
+      </ul>
+      <a class="back-button" onclick="goBack()">← Back</a>
+    </div>
+
+    <div id="brown" class="flavor-section">
+      <h2>Brown Leaf – 199 AED</h2>
+      <img src="file:///C:/Users/ravin/OneDrive/Desktop/Felicita/YELLOW.png" class="flavor-photo" />
+      <ul>
+        <li>Pear</li><li>Belgium Waffle</li><li>Berry Sorbet</li><li>Strawberry Millefeuille</li>
+      </ul>
+      <a class="back-button" onclick="goBack()">← Back</a>
+    </div>
+
+    <div id="dark" class="flavor-section">
+      <h2>Dark Leaf – 199 AED</h2>
+      <img src="file:///C:/Users/ravin/OneDrive/Desktop/Felicita/DARK.png" class="flavor-photo" />
+      <ul>
+        <li>Pinkman</li><li>Cola</li><li>Super Nova</li><li>Pina Colada</li>
+      </ul>
+      <a class="back-button" onclick="goBack()">← Back</a>
+    </div>
+
+    <div id="signature" class="flavor-section">
+      <h2>Signature – 219 AED</h2>
+      <img src="file:///C:/Users/ravin/OneDrive/Desktop/Felicita/signature.jpg" class="flavor-photo" />
+      <ul>
+        <li>Mix Berry</li><li>Mix Mint</li><li>Mix Felicita</li><li><b>Love ❤️</b></li>
+      </ul>
+      <a class="back-button" onclick="goBack()">← Back</a>
+    </div>
+
+    <div id="whispers_wine" class="flavor-section">
+      <h2>Whispers & Wine – 249 AED</h2>
+      <img src="file:///C:/Users/ravin/OneDrive/Desktop/Felicita/whispers.jpg" class="flavor-photo" />
+      <ul>
+        <li><b>My Wine 🍷</b></li>
+      </ul>
+      <a class="back-button" onclick="goBack()">← Back</a>
+    </div>
+
+    <div id="shisha_show" class="flavor-section">
+      <h2>Shisha Show – 99 AED</h2>
+      <img src="file:///C:/Users/ravin/OneDrive/Desktop/Felicita/shishashow.jpg" class="flavor-photo" />
+      <ul>
+        <li>Custom Mix</li><li><b>Love ❤️</b></li>
+      </ul>
+      <a class="back-button" onclick="goBack()">← Back</a>
+    </div>
+
+    <div id="whats_new" class="flavor-section">
+      <h2>What's New</h2>
+      <img src="file:///C:/Users/ravin/OneDrive/Desktop/Felicita/whatsnew.jpg" class="flavor-photo" />
+      <ul>
+        <li>Custom Mix</li><li>Luxury Bowl</li><li>Exclusive Service</li>
+      </ul>
+      <a class="back-button" onclick="goBack()">← Back</a>
+    </div>
+
+  </div>
+</body>
+</html>
+
+
+
+
